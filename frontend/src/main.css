@@ -46,16 +46,15 @@ body {
     color: white;
     background-color: black;
     font-family: "Roboto Mono";
-    height: 5.5vh;
+    height: 8vh;
     border-style: none;
     font-size: 1.5em;
     padding-right: 1em;
-    padding-top: .5em;
 }
 
 .nav-bar button:hover {
-    background-color: #04AA6D;
-    color: white;
+    background-color: #ffffff;
+    color: black;
     }
 
 .contact h1{
@@ -149,6 +148,10 @@ body {
     color: white;
     font-family: "Roboto Mono";
     font-size: 2em;
+}
+.menu-btns button:hover {
+    background-color: #ffffff;
+    color: black;
 }
 
 @keyframes slide-menu-in {
