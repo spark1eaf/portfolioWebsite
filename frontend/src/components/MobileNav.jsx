@@ -1,5 +1,7 @@
 import { Squash as Hamburger } from "hamburger-react"
 import { useEffect, useState } from "react"
+import NavBtns from "./NavBtns";
+import * as Constants from '../constants/constants'
 
 const MobileNav = () =>{
 
@@ -29,14 +31,7 @@ const MobileNav = () =>{
         <div className= "mobile-nav-bar">
             <Hamburger toggled={isMenuOpen} toggle={toggleMenu}/>
             <div className={menuClass}>
-                <div className="menu-btns">
-                    <button>About</button>
-                    <button>Resume</button>
-                    <button>Projects</button>
-                    <button>Skills</button>
-                    <a href="https://github.com/spark1eaf/"><button>Github</button></a>
-                    <a href="https://www.linkedin.com/in/scott-hebert-9b1789240"><button>Linkedin</button></a>
-                </div>
+                <NavBtns className={Constants.MOBILE_NAV_CLASS}/>
             </div>
         </div>
     )
