@@ -1,15 +1,35 @@
+import { useState, useEffect } from "react";
+import DesktopNav from "./DesktopNav";
+import MobileNav from "./MobileNav";
 
 const NavBar = () =>{
-    return(
-        <div className="nav-bar">
-            <button>About</button>
-            <button>Resume</button>
-            <button>Projects</button>
-            <button>Skills</button>
-            <a href="https://github.com/spark1eaf/"><button>Github</button></a>
-            <a href="https://www.linkedin.com/in/scott-hebert-9b1789240"><button>Linkedin</button></a>
-        </div>
-    )
+
+    const [windowSize, setWindowSize] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight
+    });
+    console.log(windowSize)
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowSize({
+                width: window.innerWidth,
+                height: window.innerHeight
+            });
+        };
+    
+        window.addEventListener("resize", handleResize);
+            
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+        
+    }, [windowSize]);
+
+
+    if(windowSize.width >=761)
+        return <DesktopNav/>
+    else
+        return <MobileNav/>
 }
 
 export default NavBar;

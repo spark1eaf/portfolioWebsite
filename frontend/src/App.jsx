@@ -6,6 +6,7 @@ import Contact from "./components/Contact"
 import "@fontsource/roboto-mono";
 
 const App = () =>{
+
   return(
     <div className="home-page">
       <NavBar/>
