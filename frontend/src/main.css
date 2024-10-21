@@ -180,7 +180,7 @@ body {
     font-size: 2em;
 }
 
-.menu-btns button:hover {
+.mobile-nav-btns button:hover {
     background-color: #ffffff;
     color: black;
 }

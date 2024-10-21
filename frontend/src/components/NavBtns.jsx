@@ -1,15 +1,45 @@
 import * as Constants from '../constants/constants';
+import { useRef } from 'react';
 
 const NavBtns = ({className}) =>{
+    
+    const aboutRef = useRef();
+    const contactRef = useRef();
+    
+    const navigateAbout = () =>{
+
+    } 
+
+    const promptResumeDownload = () =>{
+        if(window.confirm("Are you sure you want to download this file?")){
+            fetch("src/assets/files/Scott_Hebert_Resume.pdf").then(response =>{
+                response.blob().then(blob =>{
+                    const fileURL = window.URL.createObjectURL(blob);
+                    let alink = document.createElement("a");
+                    alink.href = fileURL;
+                    alink.download="Scott_Hebert_Resume.pdf";
+                    alink.click();
+                })
+            })
+        }
+    }
+
+    const navigateProjects = () =>{
+
+    }
+
+    const navigateContact = () =>{
+
+    }
 
     return(
         <div className= {className}>
-            <button>About</button>
-            <button>Resume</button>
-            <button>Projects</button>
+            <button onClick={navigateAbout}>About</button>
+            <button onClick={promptResumeDownload}>Resume</button>
+            <button onClick={navigateProjects}>Projects</button>
             <a href={Constants.GITHUB_LINK}><button>Github</button></a>
             <a href={Constants.LINKEDIN_LINK}><button>Linkedin</button></a>
-            <button>Contact</button>
+            <button onClick={navigateContact}>Contact</button>
         </div>
     )
 }

@@ -11,7 +11,6 @@ const Body = ({className, text})=>{
                     </>
                 ))}
             </p>
-            <img src="" alt="" />
         </div>
     )
 }
