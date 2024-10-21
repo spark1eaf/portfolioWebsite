@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 
-const Contact = () =>{
+const Contact = ({}, ref) =>{
     const [name, setName] = useState();
     const [subject, setSubject] = useState();
     const [message, setMessage] = useState();
@@ -26,7 +26,7 @@ const Contact = () =>{
     }
 
     return(
-    <div className="contact">
+    <div ref={ref} className="contact">
         <h1>Contact Me</h1>
         <form onSubmit={sendEmail}>
             <input type="text" className="contact-name" onChange={handleNameChange} placeholder="Name" value={name} required/>
@@ -40,4 +40,4 @@ const Contact = () =>{
     )
 }
 
-export default Contact;
+export default forwardRef(Contact);

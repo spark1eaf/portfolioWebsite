@@ -1,14 +1,16 @@
 import * as Constants from '../constants/constants';
 import { useRef } from 'react';
 
-const NavBtns = ({className}) =>{
+const NavBtns = ({className, navRefs}) =>{
     
-    const aboutRef = useRef();
-    const contactRef = useRef();
     
     const navigateAbout = () =>{
-
+        navRefs.aboutRef.current.scrollIntoView({behavior: 'smooth'})
     } 
+
+    const navigateContact = () =>{
+        navRefs.contactRef.current.scrollIntoView({behavior: 'smooth'})
+    }
 
     const promptResumeDownload = () =>{
         if(window.confirm("Are you sure you want to download this file?")){
@@ -25,10 +27,6 @@ const NavBtns = ({className}) =>{
     }
 
     const navigateProjects = () =>{
-
-    }
-
-    const navigateContact = () =>{
 
     }
 

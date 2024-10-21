@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import NavBtns from "./NavBtns";
 import * as Constants from '../constants/constants'
 
-const MobileNav = () =>{
+const MobileNav = ({navRefs}) =>{
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [menuClass, setMenuClass] = useState("menu hidden");
@@ -31,7 +31,7 @@ const MobileNav = () =>{
         <div className= "mobile-nav-bar">
             <Hamburger toggled={isMenuOpen} toggle={toggleMenu}/>
             <div className={menuClass}>
-                <NavBtns className={Constants.MOBILE_NAV_CLASS}/>
+                <NavBtns navRefs={navRefs} className={Constants.MOBILE_NAV_CLASS}/>
             </div>
         </div>
     )

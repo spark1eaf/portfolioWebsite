@@ -2,13 +2,15 @@ import { useState, useEffect } from "react";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 
-const NavBar = () =>{
+const NavBar = ({navRefs}) =>{
 
     const [windowSize, setWindowSize] = useState({
         width: window.innerWidth,
         height: window.innerHeight
     });
-    console.log(windowSize)
+
+    const [scrollPos, setScrollPos] = useState(0);
+    
     useEffect(() => {
         const handleResize = () => {
             setWindowSize({
@@ -25,11 +27,45 @@ const NavBar = () =>{
         
     }, [windowSize]);
 
+    useEffect(() => {
+        const handleScrollChange = () =>{
+            setScrollPos(window.scrollY);
+        }
+    
+        window.addEventListener("scroll", handleScrollChange);
+            
+        return () => {
+            window.addEventListener("scroll", handleScrollChange);
+        };
+        
+    }, [scrollPos]);
 
-    if(windowSize.width >=761)
-        return <DesktopNav/>
+    const goToTop = () =>{
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    }
+
+    let scrollButton;
+
+    if(scrollPos > 50)
+        scrollButton = <button className={"scroll_top"} onClick={goToTop}>Scroll to top</button>
+
+
+    if(windowSize.width >=761){
+        return (
+            <>
+                <DesktopNav navRefs={navRefs}/>
+                {scrollButton}
+            </>
+        )
+    }
     else
-        return <MobileNav/>
+        <>
+            return <MobileNav navRefs={navRefs}/>
+            {scrollButton}
+        </>
 }
 
 export default NavBar;
