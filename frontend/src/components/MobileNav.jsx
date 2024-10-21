@@ -1,7 +1,7 @@
-import { Squash as Hamburger } from "hamburger-react"
-import { useEffect, useState } from "react"
+import { Squash as Hamburger } from "hamburger-react";
+import { useEffect, useState } from "react";
 import NavBtns from "./NavBtns";
-import * as Constants from '../constants/constants'
+import * as Constants from '../constants/constants';
 
 const MobileNav = ({navRefs}) =>{
 
@@ -37,4 +37,4 @@ const MobileNav = ({navRefs}) =>{
     )
 }
 
-export default MobileNav
+export default MobileNav;

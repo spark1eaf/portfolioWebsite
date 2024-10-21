@@ -1,7 +1,7 @@
-import * as Constants from '../constants/constants'
-import photo from '../images/photo.jpg'
-import SectionTitle from './SectionTitle'
-import Body from './Body'
+import * as Constants from '../constants/constants';
+import photo from '../images/photo.jpg';
+import SectionTitle from './SectionTitle';
+import Body from './Body';
 
 const Intro = () =>{
     return(

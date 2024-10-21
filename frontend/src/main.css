@@ -84,7 +84,7 @@ body {
     color: black;
 }
 
-.scroll_top{
+.scroll-top{
     background-color: rgba(46, 48, 47, 0.856);
     color: #ffffff;
     width: 20em;
@@ -204,4 +204,14 @@ body {
 @keyframes fade-menu-out {
     from{transform: translateX(100%);}
     to{transform: translateX(-100%);}
+}
+
+.return-btn{
+    background-color: rgba(46, 48, 47, 0.856);
+    color: #ffffff;
+    width: 20em;
+    height: 5vh;
+    position: fixed;
+    top: 3%;
+    left: 3%;
 }

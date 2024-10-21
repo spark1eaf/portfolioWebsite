@@ -1,15 +1,15 @@
 import * as Constants from '../constants/constants';
-import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const NavBtns = ({className, navRefs}) =>{
     
     
     const navigateAbout = () =>{
-        navRefs.aboutRef.current.scrollIntoView({behavior: 'smooth'})
+        navRefs.aboutRef.current.scrollIntoView({behavior: 'smooth'});
     } 
 
     const navigateContact = () =>{
-        navRefs.contactRef.current.scrollIntoView({behavior: 'smooth'})
+        navRefs.contactRef.current.scrollIntoView({behavior: 'smooth'});
     }
 
     const promptResumeDownload = () =>{
@@ -26,15 +26,11 @@ const NavBtns = ({className, navRefs}) =>{
         }
     }
 
-    const navigateProjects = () =>{
-
-    }
-
     return(
         <div className= {className}>
             <button onClick={navigateAbout}>About</button>
             <button onClick={promptResumeDownload}>Resume</button>
-            <button onClick={navigateProjects}>Projects</button>
+            <Link to={Constants.PROJECTS_PAGE}><button>Projects</button></Link>
             <a href={Constants.GITHUB_LINK}><button>Github</button></a>
             <a href={Constants.LINKEDIN_LINK}><button>Linkedin</button></a>
             <button onClick={navigateContact}>Contact</button>

@@ -1,10 +1,10 @@
 import NavBtns from './NavBtns';
-import * as Constants from'../constants/constants'
+import * as Constants from'../constants/constants';
 
 const DesktopNav = ({navRefs}) =>{
     return(
         <div className= "nav-bar">
-            <NavBtns navRefs={navRefs} className={Constants.NAV_CLASS}/>
+            <NavBtns navRefs={navRefs} className={Constants.NAV_BTNS_CLASS}/>
         </div>
     )
 }

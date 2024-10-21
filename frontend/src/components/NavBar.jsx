@@ -45,12 +45,12 @@ const NavBar = ({navRefs}) =>{
             top: 0,
             behavior: "smooth"
         })
-    }
+    };
 
     let scrollButton;
 
     if(scrollPos > 50)
-        scrollButton = <button className={"scroll_top"} onClick={goToTop}>Scroll to top</button>
+        scrollButton = <button className={"scroll-top"} onClick={goToTop}>Scroll to top</button>
 
 
     if(windowSize.width >=761){
