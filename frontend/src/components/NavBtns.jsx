@@ -31,8 +31,8 @@ const NavBtns = ({className, navRefs}) =>{
             <button onClick={navigateAbout}>About</button>
             <button onClick={promptResumeDownload}>Resume</button>
             <Link to={Constants.PROJECTS_PAGE}><button>Projects</button></Link>
-            <a href={Constants.GITHUB_LINK}><button>Github</button></a>
-            <a href={Constants.LINKEDIN_LINK}><button>Linkedin</button></a>
+            <a href={Constants.GITHUB_LINK} target='_blank'><button>Github</button></a>
+            <a href={Constants.LINKEDIN_LINK} target='_blank'><button>Linkedin</button></a>
             <button onClick={navigateContact}>Contact</button>
         </div>
     )
