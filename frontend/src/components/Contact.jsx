@@ -1,12 +1,14 @@
-import { forwardRef, useState } from "react";
+import { forwardRef, useRef, useState } from "react";
 import SectionTitle from "./SectionTitle";
 import * as Constants from "../constants/constants";
+import emailjs from '@emailjs/browser';
 
 const Contact = ({}, ref) =>{
     const [name, setName] = useState();
     const [subject, setSubject] = useState();
     const [message, setMessage] = useState();
     const [email, setEmail] = useState();
+    const form = useRef();
 
     const handleNameChange = event =>{
         setName(event.target.value);
@@ -23,18 +25,29 @@ const Contact = ({}, ref) =>{
         setEmail(event.target.value);
     }
 
-    const sendEmail = ()=>{
-
-    }
+    const sendEmail = event => {
+        event.preventDefault();
+    
+        emailjs.sendForm(Constants.SERVICE_ID, Constants.TEMPLATE_ID, form.current, {
+            publicKey: Constants.PUBLIC_KEY,
+        })
+        .then(() => {
+            console.log('SUCCESS!');
+            },
+            error => {
+              console.log('FAILED...', error.text);
+            },
+        );
+    };
 
     return(
     <div ref={ref} className={Constants.CONTACT_CLASS}>
         <SectionTitle title={Constants.CONTACT_TITLE}/>
-        <form onSubmit={sendEmail}>
-            <input type="text" className="contact-name" onChange={handleNameChange} placeholder="Name" value={name} required/>
-            <input type="email" className="contact-name" onChange={handleEmailChange} placeholder="Your Email" value={email} required/>
-            <input type="text" className="contact-subject" onChange={handleSubjectChange} placeholder="Subject" value={subject} required/>
-            <textarea className="contact-message" onChange={handleMessageChange} placeholder="Email Message" value={message} required></textarea>
+        <form ref={form} onSubmit={sendEmail}>
+            <input type="text" className="contact-name" onChange={handleNameChange} placeholder="Name" name="name" value={name} required/>
+            <input type="email" className="contact-name" onChange={handleEmailChange} placeholder="Your Email" name="email" value={email} required/>
+            <input type="text" className="contact-subject" onChange={handleSubjectChange} placeholder="Subject" name="subject" value={subject} required/>
+            <textarea className="contact-message" onChange={handleMessageChange} placeholder="Email Message" name="message" value={message} required></textarea>
             <button type="submit" className="submit-btn">Submit</button>
         </form>
     </div>
