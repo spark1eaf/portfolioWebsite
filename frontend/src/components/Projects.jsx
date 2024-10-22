@@ -11,9 +11,10 @@ const Projects = () =>{
         aboutRef: useRef(null),
         contactRef: useRef(null)
       };
+    document.title = `Projects`;
 
     return(
-        <div className={Constants.PROJECTS_PAGE_CLASS}>
+        <div className={`projects-page`}>
             <Link to={Constants.HOME_PAGE}><button className="return-btn">Back to Home</button></Link>
             <SectionTitle className={Constants.INTRO_TITLE_CLASS} title={Constants.PROJECTS_TITLE}/>
             <Body className={Constants.GENERIC_BODY_CLASS} text={Constants.PROJECTS_BODY}/>
