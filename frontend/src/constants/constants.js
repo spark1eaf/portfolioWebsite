@@ -12,6 +12,8 @@ As for my hobbies, me and my wife love to travel when time permits. In my free t
 
 //contact
 export const CONTACT_CLASS = `contact`;
+export const CONTACT_TITLE = `Contact Me`;
+
 
 //footer
 export const FOOTER_P1 = `All Rights Reserved`
