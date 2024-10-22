@@ -1,20 +1,18 @@
-import NavBar from "./components/NavBar"
-import Footer from "./components/Footer"
-import Title from "./components/Title"
-import Body from "./components/Body"
-import Contact from "./components/Contact"
-import "@fontsource/roboto-mono";
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import HomePage from './components/HomePage';
+import Projects from './components/Projects';
+import * as Constants from "./constants/constants";
 
 const App = () =>{
+
   return(
-    <div className="home-page">
-      <NavBar/>
-      <Title/>
-      <Body/>
-      <Contact/>
-      <Footer/>
-    </div>
+    <Router>
+      <Routes>
+        <Route path={Constants.HOME_PAGE} element={<HomePage/>} />
+        <Route path={Constants.PROJECTS_PAGE} element={<Projects/>} />
+      </Routes>
+    </Router>
   )
 }
 
-export default App
+export default App;
