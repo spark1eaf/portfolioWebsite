@@ -53,7 +53,7 @@ const NavBar = ({navRefs}) =>{
         scrollButton = <button className={"scroll-top"} onClick={goToTop}>Scroll to top</button>
 
 
-    if(windowSize.width >=761){
+    if(windowSize.width >=775){
         return (
             <>
                 <DesktopNav navRefs={navRefs}/>
@@ -62,10 +62,12 @@ const NavBar = ({navRefs}) =>{
         )
     }
     else
-        <>
-            return <MobileNav navRefs={navRefs}/>
-            {scrollButton}
-        </>
+        return(
+            <>
+                <MobileNav navRefs={navRefs}/>
+                {scrollButton}
+            </>
+        )
 }
 
 export default NavBar;
