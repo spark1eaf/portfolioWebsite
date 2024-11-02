@@ -10,6 +10,7 @@ import Footer from "./Footer";
 import * as Constants from "../constants/constants";
 
 const HomePage = () =>{
+
     const navRefs = {
         aboutRef: useRef(null),
         contactRef: useRef(null)

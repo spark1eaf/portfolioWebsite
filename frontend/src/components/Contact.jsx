@@ -32,12 +32,16 @@ const Contact = ({}, ref) =>{
             publicKey: Constants.PUBLIC_KEY,
         })
         .then(() => {
-            console.log('SUCCESS!');
+            console.log('Email sent');
             },
             error => {
-              console.log('FAILED...', error.text);
+              console.log('Failed to send email...', error.text);
             },
         );
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
     };
 
     return(
