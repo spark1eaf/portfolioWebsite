@@ -1,4 +1,3 @@
-
 import "@fontsource/roboto-mono";
 import { useRef } from "react";
 import NavBar from "./NavBar";
@@ -8,14 +7,14 @@ import Body from "./Body";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import * as Constants from "../constants/constants";
+import { NavRefs } from "./ComponentTypes";
 
 const HomePage = () =>{
 
-    const navRefs = {
-        aboutRef: useRef(null),
-        contactRef: useRef(null)
-      };
-    
+    const navRefs:NavRefs = {
+        aboutRef: useRef<HTMLHeadingElement>(null),
+        contactRef: useRef<HTMLHeadingElement>(null)
+      }
       return(
         <div className="home-page">
           <NavBar navRefs={navRefs} />

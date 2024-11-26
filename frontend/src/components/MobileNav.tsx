@@ -2,8 +2,9 @@ import { Squash as Hamburger } from "hamburger-react";
 import { useEffect, useState } from "react";
 import NavBtns from "./NavBtns";
 import * as Constants from '../constants/constants';
+import {NavRefs} from "./ComponentTypes"
 
-const MobileNav = ({navRefs}) =>{
+const MobileNav = ({navRefs}: {navRefs:NavRefs}) =>{
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [menuClass, setMenuClass] = useState("menu hidden");
@@ -15,8 +16,8 @@ const MobileNav = ({navRefs}) =>{
 
  
     useEffect(() => {
-        const handlePageClick = (event) => {
-          if (isMenuOpen && !event.target.closest('.hamburger-react'))
+        const handlePageClick = (event:MouseEvent) => {
+          if (isMenuOpen && !(event.target as HTMLElement).closest('.hamburger-react'))
             toggleMenu();
         };
   

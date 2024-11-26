@@ -1,6 +1,5 @@
 import * as Constants from "../constants/constants";
 
-
 const Footer = () =>{
     return(
         <div className="footer">

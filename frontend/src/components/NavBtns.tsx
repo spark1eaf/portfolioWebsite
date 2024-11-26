@@ -1,16 +1,25 @@
 import * as Constants from '../constants/constants';
 import { Link } from 'react-router-dom';
 import ResumePDF from '../assets/files/Scott_Hebert_Resume.pdf'
+import {NavRefs} from "./ComponentTypes"
 
-const NavBtns = ({className, navRefs}) =>{
-    
+interface Props{
+    className:string,
+    navRefs:NavRefs;
+}
+
+const NavBtns = ({className, navRefs}:Props) =>{
+     
     
     const navigateAbout = () =>{
-        navRefs.aboutRef.current.scrollIntoView({behavior: 'smooth'});
+        if(navRefs.aboutRef.current !== null)
+            navRefs.aboutRef.current.scrollIntoView({behavior: 'smooth'});
+
     } 
 
     const navigateContact = () =>{
-        navRefs.contactRef.current.scrollIntoView({behavior: 'smooth'});
+        if(navRefs.contactRef.current !== null)
+            navRefs.contactRef.current.scrollIntoView({behavior: 'smooth'});
     }
 
     return(
