@@ -1,5 +1,9 @@
 
-const Body = ({className, text})=>{
+interface Props{
+    className:string,
+    text:string
+}
+const Body = ({className, text}:Props)=>{
 
     return(
         <div className={className}>

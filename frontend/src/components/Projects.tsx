@@ -1,18 +1,12 @@
-import { useRef } from "react";
 import Footer from "./Footer";
 import SectionTitle from "./SectionTitle";
 import Body from "./Body";
 import * as Constants from "../constants/constants"
 import { Link } from 'react-router-dom';
 
-
 const Projects = () =>{
-    const navRefs = {
-        aboutRef: useRef(null),
-        contactRef: useRef(null)
-      };
-    document.title = `Projects`;
-    
+
+    document.title = `Projects`;   
     const handleReturn = () =>{
         document.title=`Welcome`;
     }

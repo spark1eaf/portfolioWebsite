@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
+import {NavRefs} from "./ComponentTypes"
 
-const NavBar = ({navRefs}) =>{
+const NavBar = ({navRefs}: {navRefs: NavRefs}) =>{
 
     const [windowSize, setWindowSize] = useState({
         width: window.innerWidth,
@@ -25,7 +26,7 @@ const NavBar = ({navRefs}) =>{
             window.removeEventListener("resize", handleResize);
         };
         
-    }, [windowSize]);
+    }, []);
 
     useEffect(() => {
         const handleScrollChange = () =>{
