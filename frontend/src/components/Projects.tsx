@@ -9,7 +9,7 @@ const Projects = () =>{
     document.title = `Projects`;   
     const handleReturn = () =>{
         document.title=`Welcome`;
-    }
+    };
 
     return(
         <div className={`projects-page`}>
@@ -18,7 +18,7 @@ const Projects = () =>{
             <Body className={Constants.GENERIC_BODY_CLASS} text={Constants.PROJECTS_BODY}/>
             <Footer/>
         </div>
-    )
-}
+    );
+};
 
 export default Projects;

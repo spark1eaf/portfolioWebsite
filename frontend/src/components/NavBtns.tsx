@@ -9,18 +9,16 @@ interface Props{
 }
 
 const NavBtns = ({className, navRefs}:Props) =>{
-     
     
     const navigateAbout = () =>{
         if(navRefs.aboutRef.current !== null)
             navRefs.aboutRef.current.scrollIntoView({behavior: 'smooth'});
-
-    } 
+    };
 
     const navigateContact = () =>{
         if(navRefs.contactRef.current !== null)
             navRefs.contactRef.current.scrollIntoView({behavior: 'smooth'});
-    }
+    };
 
     return(
         <div className= {className}>
@@ -31,7 +29,7 @@ const NavBtns = ({className, navRefs}:Props) =>{
             <a href={Constants.LINKEDIN_LINK} target='_blank' rel='noopener noreferrer'><button>Linkedin</button></a>
             <button onClick={navigateContact}>Contact</button>
         </div>
-    )
-}
+    );
+};
 
 export default NavBtns;

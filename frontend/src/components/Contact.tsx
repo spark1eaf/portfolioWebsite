@@ -13,18 +13,19 @@ const Contact = forwardRef<HTMLHeadingElement>(({}, ref) =>{
 
     const handleNameChange = (event:ChangeEvent<HTMLInputElement>) =>{
         setName(event.target.value);
-    }
+    };
+
     const handleSubjectChange = (event:ChangeEvent<HTMLInputElement>) =>{
         setSubject(event.target.value);
-    }
+    };
 
     const handleMessageChange = (event:ChangeEvent<HTMLTextAreaElement>) =>{
         setMessage(event.target.value);
-    }
+    };
 
     const handleEmailChange = (event:ChangeEvent<HTMLInputElement>) =>{
         setEmail(event.target.value);
-    }
+    };
 
     const sendEmail = (event:FormEvent) => {
         event.preventDefault();
@@ -67,7 +68,7 @@ const Contact = forwardRef<HTMLHeadingElement>(({}, ref) =>{
             <button type="submit" className="submit-btn">Submit</button>
         </form>
     </div>
-    )
-})
+    );
+});
 
 export default Contact;

@@ -6,7 +6,7 @@ const Footer = () =>{
             <p>{Constants.FOOTER_P1}</p>
             <p>{Constants.FOOTER_P2}</p>
         </footer>
-    )
-}
+    );
+};
 
 export default Footer;

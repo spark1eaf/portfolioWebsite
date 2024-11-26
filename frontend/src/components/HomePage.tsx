@@ -14,17 +14,17 @@ const HomePage = () =>{
     const navRefs:NavRefs = {
         aboutRef: useRef<HTMLHeadingElement>(null),
         contactRef: useRef<HTMLHeadingElement>(null)
-      }
-      return(
-        <div className="home-page">
-          <NavBar navRefs={navRefs} />
-          <Intro/>
-          <SectionTitle ref={navRefs.aboutRef} className={Constants.GENERIC_TITLE_CLASS} title={Constants.ABOUT_TITLE}/>
-          <Body className={Constants.GENERIC_BODY_CLASS} text={Constants.ABOUT_BODY}/>
-          <Contact ref={navRefs.contactRef}/>
-          <Footer/>
-        </div>
-      )
+    }
+    return(
+      <div className="home-page">
+        <NavBar navRefs={navRefs} />
+        <Intro/>
+        <SectionTitle ref={navRefs.aboutRef} className={Constants.GENERIC_TITLE_CLASS} title={Constants.ABOUT_TITLE}/>
+        <Body className={Constants.GENERIC_BODY_CLASS} text={Constants.ABOUT_BODY}/>
+        <Contact ref={navRefs.contactRef}/>
+        <Footer/>
+      </div>
+    );
 }
 
 export default HomePage;

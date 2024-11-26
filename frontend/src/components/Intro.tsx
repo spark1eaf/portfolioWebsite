@@ -12,7 +12,7 @@ const Intro = () =>{
                 <Body className={Constants.GENERIC_BODY_CLASS} text={Constants.INTRO_BODY} />
             </div>
         </>
-    )
+    );
 }
 
 export default Intro;

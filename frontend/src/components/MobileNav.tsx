@@ -7,13 +7,10 @@ import {NavRefs} from "./ComponentTypes"
 const MobileNav = ({navRefs}: {navRefs:NavRefs}) =>{
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
     const menuClass = isMenuOpen ? "menu visible" : "menu hidden";
-
     const toggleMenu = () =>{
         setIsMenuOpen(!isMenuOpen);
     };
-
  
     useEffect(() => {
         const handlePageClick = (event:MouseEvent) => {
@@ -35,7 +32,7 @@ const MobileNav = ({navRefs}: {navRefs:NavRefs}) =>{
                 <NavBtns navRefs={navRefs} className={Constants.MOBILE_NAV_CLASS}/>
             </div>
         </nav>
-    )
-}
+    );
+};
 
 export default MobileNav;

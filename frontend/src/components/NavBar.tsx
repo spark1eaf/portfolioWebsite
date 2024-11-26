@@ -6,13 +6,25 @@ import { throttle } from "lodash";
 
 const NavBar = ({navRefs}: {navRefs: NavRefs}) =>{
 
+    const [scrollPos, setScrollPos] = useState(0);
     const [windowSize, setWindowSize] = useState({
         width: window.innerWidth,
         height: window.innerHeight
     });
+    const NavComponent = windowSize.width >=775 ? DesktopNav : MobileNav;
 
-    const [scrollPos, setScrollPos] = useState(0);
-    
+    const goToTop = () =>{
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    };
+
+    const scrollButton = () =>{
+        if(scrollPos > 50)
+            return <button className={"scroll-top"} onClick={goToTop}>Scroll to top</button>;
+    };
+
     useEffect(() => {
         const handleResize = throttle(() => {
             setWindowSize({
@@ -43,28 +55,13 @@ const NavBar = ({navRefs}: {navRefs: NavRefs}) =>{
         };
         
     }, [scrollPos]);
-
-    const goToTop = () =>{
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        })
-    };
-
-    const scrollButton = () =>{
-        if(scrollPos > 50)
-            return <button className={"scroll-top"} onClick={goToTop}>Scroll to top</button>;
-    }
-
-    const NavComponent = windowSize.width >=775 ? DesktopNav : MobileNav;
         
     return (
         <>
             <NavComponent navRefs={navRefs}/>
             {scrollButton()}
         </>
-    )
-
-}
+    );
+};
 
 export default NavBar;

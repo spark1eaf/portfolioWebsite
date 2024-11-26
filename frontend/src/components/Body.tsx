@@ -4,6 +4,7 @@ interface Props{
     className:string,
     text:string
 }
+
 const Body = memo(({className, text}:Props)=>{
 
     return(
