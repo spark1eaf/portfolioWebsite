@@ -7,11 +7,11 @@ import {NavRefs} from "./ComponentTypes"
 const MobileNav = ({navRefs}: {navRefs:NavRefs}) =>{
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [menuClass, setMenuClass] = useState("menu hidden");
+
+    const menuClass = isMenuOpen ? "menu visible" : "menu hidden";
 
     const toggleMenu = () =>{
         setIsMenuOpen(!isMenuOpen);
-        isMenuOpen ? setMenuClass("menu hidden") : setMenuClass("menu visible");
     };
 
  
@@ -26,15 +26,15 @@ const MobileNav = ({navRefs}: {navRefs:NavRefs}) =>{
         return () => {
           document.removeEventListener('click', handlePageClick);
         };
-      });    
+      }, [isMenuOpen]);    
 
     return(
-        <div className= "mobile-nav-bar">
+        <nav className= "mobile-nav-bar">
             <Hamburger toggled={isMenuOpen} toggle={toggleMenu}/>
             <div className={menuClass}>
                 <NavBtns navRefs={navRefs} className={Constants.MOBILE_NAV_CLASS}/>
             </div>
-        </div>
+        </nav>
     )
 }
 

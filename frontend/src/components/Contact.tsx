@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, forwardRef, useRef, useState } from "react";
+import { ChangeEvent, FormEvent, forwardRef, useEffect, useRef, useState } from "react";
 import SectionTitle from "./SectionTitle";
 import * as Constants from "../constants/constants";
 import emailjs from '@emailjs/browser';
@@ -8,7 +8,8 @@ const Contact = forwardRef<HTMLHeadingElement>(({}, ref) =>{
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
     const [email, setEmail] = useState("");
-    const form = useRef<HTMLFormElement|null>(null);
+    const form = useRef<HTMLFormElement>(null);
+    const [sendEmailNotification, setSendEmailNotification] = useState<string|null>(null);
 
     const handleNameChange = (event:ChangeEvent<HTMLInputElement>) =>{
         setName(event.target.value);
@@ -36,17 +37,24 @@ const Contact = forwardRef<HTMLHeadingElement>(({}, ref) =>{
             })
             .then(() => {
                 console.log('Email sent');
+                setSendEmailNotification(`Email Sent`)
+                setName("");
+                setEmail("");
+                setSubject("");
+                setMessage("");
                 },
                 error => {
                   console.log('Failed to send email...', error.text);
+                  setSendEmailNotification(`Something went wrong. Please try again later.`)
                 },
             );
-            setName("");
-            setEmail("");
-            setSubject("");
-            setMessage("");
         }
     };
+
+    useEffect(() =>{
+        if(sendEmailNotification)
+            alert(sendEmailNotification);
+    }, [sendEmailNotification]);
 
     return(
     <div className={Constants.CONTACT_CLASS}>

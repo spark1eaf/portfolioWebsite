@@ -5,9 +5,9 @@ import {NavRefs} from "./ComponentTypes"
 
 const DesktopNav = ({navRefs}: {navRefs:NavRefs}) =>{
     return(
-        <div className= "nav-bar">
+        <nav className= "nav-bar">
             <NavBtns navRefs={navRefs} className={Constants.NAV_BTNS_CLASS}/>
-        </div>
+        </nav>
     )
 }
 
