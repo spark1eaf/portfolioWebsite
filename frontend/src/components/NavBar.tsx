@@ -2,6 +2,7 @@ import { useState, useEffect} from "react";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 import {NavRefs} from "./ComponentTypes"
+import { throttle } from "lodash";
 
 const NavBar = ({navRefs}: {navRefs: NavRefs}) =>{
 
@@ -13,12 +14,12 @@ const NavBar = ({navRefs}: {navRefs: NavRefs}) =>{
     const [scrollPos, setScrollPos] = useState(0);
     
     useEffect(() => {
-        const handleResize = () => {
+        const handleResize = throttle(() => {
             setWindowSize({
                 width: window.innerWidth,
                 height: window.innerHeight
             });
-        };
+        }, 100);
     
         window.addEventListener("resize", handleResize);
             
@@ -29,9 +30,11 @@ const NavBar = ({navRefs}: {navRefs: NavRefs}) =>{
     }, []);
 
     useEffect(() => {
-        const handleScrollChange = () =>{
+        const handleScrollChange = throttle(() => {
+            console.log("hit")
             setScrollPos(window.scrollY);
-        }
+        }, 500); 
+
     
         window.addEventListener("scroll", handleScrollChange);
             
@@ -48,27 +51,20 @@ const NavBar = ({navRefs}: {navRefs: NavRefs}) =>{
         })
     };
 
-    let scrollButton;
-
-    if(scrollPos > 50)
-        scrollButton = <button className={"scroll-top"} onClick={goToTop}>Scroll to top</button>
-
-
-    if(windowSize.width >=775){
-        return (
-            <>
-                <DesktopNav navRefs={navRefs}/>
-                {scrollButton}
-            </>
-        )
+    const scrollButton = () =>{
+        if(scrollPos > 50)
+            return <button className={"scroll-top"} onClick={goToTop}>Scroll to top</button>;
     }
-    else
-        return(
-            <>
-                <MobileNav navRefs={navRefs}/>
-                {scrollButton}
-            </>
-        )
+
+    const NavComponent = windowSize.width >=775 ? DesktopNav : MobileNav;
+        
+    return (
+        <>
+            <NavComponent navRefs={navRefs}/>
+            {scrollButton()}
+        </>
+    )
+
 }
 
 export default NavBar;
