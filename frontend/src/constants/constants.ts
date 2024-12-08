@@ -25,6 +25,7 @@ export const GENERIC_TITLE_CLASS = `title`;
 export const GENERIC_BODY_CLASS = `body`;
 
 //project page
+export const PROJECT_TITLE_CLASS = `project-title`;
 export const PROJECTS_TITLE = `Projects`;
 export const PROJECTS_TEXT = `About Me`;
 export const PROJECTS_BODY = `In the works...`;
