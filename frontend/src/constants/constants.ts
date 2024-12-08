@@ -1,4 +1,3 @@
-
 //intro
 export const INTRO_TITLE_CLASS = `intro-title`;
 export const INTRO_TITLE = `Hi, I'm Scott`;
@@ -14,7 +13,6 @@ As for my hobbies, me and my wife love to travel when time permits. In my free t
 export const CONTACT_CLASS = `contact`;
 export const CONTACT_TITLE = `Contact Me`;
 
-
 //footer
 export const FOOTER_P1 = `All Rights Reserved`
 export const FOOTER_P2 = `@Scott Hebert 2024`
@@ -23,21 +21,22 @@ export const FOOTER_P2 = `@Scott Hebert 2024`
 export const NAV_BTNS_CLASS = `nav-btns`;
 export const MOBILE_NAV_CLASS = `mobile-nav-btns`;
 
-//external links
-export const GITHUB_LINK = `https://github.com/spark1eaf/`;
-export const LINKEDIN_LINK = `https://www.linkedin.com/in/scott-hebert-9b1789240`;
-
 export const GENERIC_TITLE_CLASS = `title`;
 export const GENERIC_BODY_CLASS = `body`;
 
 //project page
 export const PROJECTS_TITLE = `Projects`;
 export const PROJECTS_TEXT = `About Me`;
-export const PROJECTS_BODY = `Coming soon...`;
+export const PROJECTS_BODY = `In the works...`;
+export const PERSONAL_SITE_TEXT_1 = `Web application with a few features I thought would be interesting. Includes login functionality with more details on individual features on the landing page.`
+export const PERSONAL_SITE_TEXT_2 = `Created using React (Typescript/Javascript), Spring Boot (Java) and MySql.`
 
-//Routes
+//Routes and links
 export const HOME_PAGE = `/`;
 export const PROJECTS_PAGE = `projects`;
+export const GITHUB_LINK = `https://github.com/spark1eaf/`;
+export const LINKEDIN_LINK = `https://www.linkedin.com/in/scott-hebert-9b1789240`;
+export const PERSONAL_SITE = `https://www.site.scottphebert.com`
 
 //email
 export const SERVICE_ID = `service_nljxid9`;
