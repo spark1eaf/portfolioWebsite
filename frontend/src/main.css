@@ -153,7 +153,7 @@ body {
     margin-left: 5%;
     margin-right: 5%;
     width: 90%;
-    padding-bottom: 1%;  
+    margin-bottom: 10%;  
 }
 
 .contact h1{
@@ -167,7 +167,7 @@ body {
     font-size: 1.5em;
     font-family: "Roboto Mono";
     margin-bottom: 2.5%;
-    width: 55%;
+    width: 99%;
     height: 4vh;
     padding-left: 1%;
 }
@@ -201,10 +201,10 @@ body {
 :focus::placeholder {color: transparent;}
 
 .footer{
-    margin-top: 15%;
-    padding-bottom: 10%;
+    margin-top: auto;
     font-size: 1.2em;
     text-align: center;
+    padding: 3% 3%;
 }
 .hamburger-react{z-index: 1;}
 
@@ -256,7 +256,10 @@ body {
 }
 
 /* Projects Page */
-.projects-page{height: 100%;}
+.projects-page{
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100%;}
 
 .return-btn{
     background-color: rgba(46, 48, 47, 0.856);
@@ -271,11 +274,19 @@ body {
 .return-btn:hover{background-color: rgba(49, 51, 50, 0.856);}
 
 .projects{
-    display: flex;
-    margin: 0 5%;
+    display:flex;
+    margin: 5% 5%;
     height: 50%;
 }
+.project-title{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 3.5em;
+}
+
 .personal-site-div{
+    border-style: solid;
     width: 50%;
     margin-left: 5%;
 }
@@ -283,12 +294,19 @@ body {
 .personal-site-btn{
     color: white;
     background-color: black;
-    font-size: 2.5em;
-    height: 30%;
+    font-size: 3em;
+    height: auto;
+    align-content: center;
     margin-left: 50%;
     margin-top: 2%;
-    width: 50%;
+    width: auto;
+    padding: 7% 7%;
     transform: translateX(-50%);
+}
+
+.personal-site-btn:hover{
+    color: black;
+    background-color: white;
 }
 
 .project-txt-one{
@@ -302,7 +320,10 @@ body {
     transform: translateX(-50%); 
 }
 
-.personal-site-btn:hover{
-    color: black;
-    background-color: white;
+@media screen and (width < 1450px){
+    .personal-site-div{
+        border-style: none;
+        width: 100%;
+        margin-left: 0;
+    }
 }

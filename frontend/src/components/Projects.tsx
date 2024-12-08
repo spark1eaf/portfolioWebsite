@@ -14,7 +14,7 @@ const Projects = () =>{
     return(
         <div className={`projects-page`}>
             <Link to={Constants.HOME_PAGE}><button onClick={handleReturn} className="return-btn">Back to Home</button></Link>
-            <SectionTitle className={Constants.INTRO_TITLE_CLASS} title={Constants.PROJECTS_TITLE}/>
+            <SectionTitle className={Constants.PROJECT_TITLE_CLASS} title={Constants.PROJECTS_TITLE}/>
             <Body className={Constants.GENERIC_BODY_CLASS} text={Constants.PROJECTS_BODY}/>
             <div className="projects">
                 <div className="personal-site-div">
