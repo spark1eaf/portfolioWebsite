@@ -5,8 +5,8 @@ export const INTRO_BODY = `I'm a Software developer with over two years of exper
 
 //about
 export const ABOUT_TITLE = `About Me`;
-export const ABOUT_BODY = `I'm a software developer from Lafayette, Louisiana. I discovered my passion for software development while persuing an Electrical Engineering degree at the University of Lafayette Louisiana. I realized about halfway through the program that I preferred programming to calculating the heat of resistors and decided to switch to the university's computer science program.
-As a professional, my past role in the Marine Corps along with my previous career work have taught me to value effective leadership and commmunication above all else. It's my firm belief that organizations excel when leaders have a keen interest in the growth of those in their care. I hope to bring these values with me in any future endeavors. I've always been self motivated when it comes to my work approach and gain great satisfation from finding ways to accomplish tasks more efficiently. 
+export const ABOUT_BODY = `I'm a software developer from Lafayette, Louisiana. I discovered my passion for software development while pursuing an Electrical Engineering degree at the University of Lafayette Louisiana. I realized about halfway through the program that I preferred programming to calculating the heat of resistors and decided to switch to the university's computer science program.
+As a professional, my past role in the Marine Corps along with my previous career work have taught me to value effective leadership and communication above all else. It's my firm belief that organizations excel when leaders have a keen interest in the growth of those in their care. I hope to bring these values with me in any future endeavors. I've always been self motivated when it comes to my work approach and gain great satisfaction from finding ways to accomplish tasks more efficiently. 
 As for my hobbies, me and my wife love to travel when time permits. In my free time, you'll probably find me at the gym, playing video games, or hanging out with friends.`;
 
 //contact
@@ -29,7 +29,7 @@ export const PROJECT_TITLE_CLASS = `project-title`;
 export const PROJECTS_TITLE = `Projects`;
 export const PROJECTS_TEXT = `About Me`;
 export const PROJECTS_BODY = `In the works...`;
-export const PERSONAL_SITE_TEXT_1 = `Web application with a few features I thought would be interesting. Includes login functionality with more details on individual features on the landing page.`
+export const PERSONAL_SITE_TEXT_1 = `Web application with a few features I thought would be interesting. Includes full login and account creation functionality with more details on individual features on the landing page.`
 export const PERSONAL_SITE_TEXT_2 = `Created using React (Typescript/Javascript), Spring Boot (Java) and MySql.`
 
 //Routes and links
