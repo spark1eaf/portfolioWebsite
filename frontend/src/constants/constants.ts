@@ -15,7 +15,7 @@ export const CONTACT_TITLE = `Contact Me`;
 
 //footer
 export const FOOTER_P1 = `All Rights Reserved`
-export const FOOTER_P2 = `@Scott Hebert 2024`
+export const FOOTER_P2 = `@Scott Hebert 2025`
 
 //destop and mobileNav
 export const NAV_BTNS_CLASS = `nav-btns`;
