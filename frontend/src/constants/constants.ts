@@ -1,7 +1,7 @@
 //intro
 export const INTRO_TITLE_CLASS = `intro-title`;
 export const INTRO_TITLE = `Hi, I'm Scott`;
-export const INTRO_BODY = `I'm a Software developer with over two years of experience. So far my work has been predominately backend oriented, but I've made it a personal goal to become as well rounded as possible and most recently have been exploring frontend development in my own time. I'm always eager to learn new things and take on new challenges. I created this website to showcase some of the projects I'm working on, so please feel free to take a look around.`;
+export const INTRO_BODY = `I'm a Software developer with over two years of experience. So far my work has been predominately backend oriented, but I've made it a personal goal to become as well rounded as possible and most recently have been delving further frontend development in my own time. I'm always eager to learn new things and take on new challenges. I created this website to showcase some of the projects I'm working on, so please feel free to take a look around.`;
 
 //about
 export const ABOUT_TITLE = `About Me`;
@@ -11,7 +11,7 @@ As for my hobbies, me and my wife love to travel when time permits. In my free t
 
 //contact
 export const CONTACT_CLASS = `contact`;
-export const CONTACT_TITLE = `Contact Me`;
+export const CONTACT_TITLE = `Contact`;
 
 //footer
 export const FOOTER_P1 = `All Rights Reserved`

@@ -62,7 +62,7 @@ const Contact = forwardRef<HTMLHeadingElement>(({}, ref) =>{
         <SectionTitle ref={ref} className={Constants.GENERIC_TITLE_CLASS}title={Constants.CONTACT_TITLE}/>
         <form ref={form} onSubmit={sendEmail}>
             <input type="text" className="contact-name" onChange={handleNameChange} placeholder="Name" name="name" value={name} required/>
-            <input type="email" className="contact-name" onChange={handleEmailChange} placeholder="Your Email" name="email" value={email} required/>
+            <input type="email" className="contact-name" onChange={handleEmailChange} placeholder="Email" name="email" value={email} required/>
             <input type="text" className="contact-subject" onChange={handleSubjectChange} placeholder="Subject" name="subject" value={subject} required/>
             <textarea className="contact-message" onChange={handleMessageChange} placeholder="Email Message" name="message" value={message} required></textarea>
             <button type="submit" className="submit-btn">Submit</button>
